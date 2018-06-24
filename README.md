@@ -1,7 +1,7 @@
 # Quick guide
 1. npm i
 2. npm run start
-3. start \\localhost@38080\DavWWWRoot
+3. start \\\\localhost@38080\DavWWWRoot
 4. start iexplore.exe http://localhost:48080/
 
 # How come this STUPID thing makes sense?
