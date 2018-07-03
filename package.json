@@ -1,14 +1,15 @@
 {
   "name": "dev-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "WebDAV + static HTTP file server",
   "scripts": {
-    "start": "node dav.js >> webdav.log & http-server ../ -p 48080 >> http.log &"
+    "start": "node index.js > console.log 2>&1 &"
   },
   "author": "Makoto Mizukami <comm@makotom.org>",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1",
+    "express": "^4.16.3",
+    "serve-index": "^1.9.1",
     "webdav-server": "^2.3.22"
   }
 }
