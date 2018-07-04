@@ -1,5 +1,5 @@
 {
-    const rootDir = '/home/makotom/';
+    const rootDir = process.env.HOME;
 
     {
         const webdav = require('webdav-server').v2;
