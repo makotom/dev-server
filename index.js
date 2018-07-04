@@ -1,25 +1,28 @@
 {
-    const webdav = require('webdav-server').v2;
-    const server = new webdav.WebDAVServer({ port: 38080 });
+    const rootDir = '/home/makotom/';
 
-    server.setFileSystem('/', new webdav.PhysicalFileSystem('../'));
+    {
+        const webdav = require('webdav-server').v2;
+        const server = new webdav.WebDAVServer({ port: 38080 });
 
-    server.start();
-}
+        server.setFileSystem('/', new webdav.PhysicalFileSystem(rootDir));
 
-{
-    const express = require('express');
-    const serveIndex = require('serve-index');
+        server.start();
+    }
 
-    const app = express();
+    {
+        const express = require('express');
+        const serveIndex = require('serve-index');
 
-    app.use(
-        '/',
-        express.static('../'),
-        serveIndex('../', {
-            icons: true
-        })
-    );
+        const app = express();
 
-    app.listen(48080);
+        app.use(
+            express.static(rootDir),
+            serveIndex(rootDir, {
+                icons: true
+            })
+        );
+
+        app.listen(48080);
+    }
 }
